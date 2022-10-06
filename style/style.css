@@ -44,6 +44,9 @@ div:hover h1 {
 div:hover .complete {
 	background-color: #10bf00;
 }
+div:hover .inprogress {
+	background-color: #0088f0;
+}
 table {
 	border-collapse: collapse;
 	border: 1px solid black;
