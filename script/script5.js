@@ -182,6 +182,16 @@ function task6() {
 };
 
 //Task 7
+function task7() {
+	function pyramid (height) {
+		for (let i = 1; i <= height; i++) {
+			for (let j = 1; j <= height; j++) {
+				document.write(`i`);
+			};
+		};
+	};
+};
+
 //Task 8
 //Task 9
 //Task 10
