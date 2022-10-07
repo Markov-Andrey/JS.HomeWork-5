@@ -59,11 +59,13 @@ td {
 	text-align: center;
 }
 ul {
-	margin: 5px;
+	margin-left: 25px;
 	font-size: 20px;
+	list-style-type: "\1F449";
 }
 li {
 	margin-left: 25px;
+	font-size: 20px;
 }
 .complete {
 	display: inline-block;
@@ -84,47 +86,4 @@ li {
 	border: 1px solid black;
 	text-shadow: 1px 1px 5px black;
 	box-shadow: 5px 3px 3px #C0C0C0;
-}
-.task2 {
-	overflow-x:hidden;
-	margin: 5px 5%;
-	padding: 5px;
-    background-color: white;
-	border: 1px solid black;
-	height: 200px;
-}
-.weekend {
-	border: 1px solid black;
-	padding: 2px;
-	font-size: 20px;
-	text-align: center;
-	color: white;
-	background-color: red;
-	font-weight: 700;
-}
-.today {
-	border: 1px solid black;
-	padding: 2px;
-	font-size: 20px;
-	text-align: center;
-	color: white;
-	background-color: green;
-	font-weight: 700;
-}
-.delta{
-	display: inline-block;
-	margin: 15px 25%;
-	padding: 5px;
-    background: black;
-	color: white;
-	border: 2px solid gray;
-	font-weight: 900;
-	transition-duration: .7s;
-}
-.delta:hover {
-	box-shadow: 5px 3px 3px gray;
-	transition-duration: .7s;
-	color: #00c217;
-    background: #141414;
-	font-weight: 900;
 }
