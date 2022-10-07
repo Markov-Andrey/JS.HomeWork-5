@@ -87,3 +87,19 @@ li {
 	text-shadow: 1px 1px 5px black;
 	box-shadow: 5px 3px 3px #C0C0C0;
 }
+.pyramid{
+	display: inline-block;
+	margin: 15px;
+	padding: 5px;
+    background: black;
+	color: white;
+	border: 2px solid gray;
+	font-weight: 900;
+	transition-duration: .7s;
+}
+.pyramid:hover{
+    background: #E0FFFF;
+	color: black;
+	transition-duration: .7s;
+	transform: scale(1.1);
+}
