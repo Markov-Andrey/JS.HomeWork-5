@@ -254,7 +254,7 @@ function task7() {
 
 //Task 8
 function task8() {
-	document.write(`Код в JS-файле, уже подобное выполнял, поэтому комментировать не стану.<br>
+	document.write(`Код в JS-файле, уже подобное выполнял, "комменты" внутри.<br>
 		Перевернутый треугольник появляется автоматически с помощью развернутого цикла while
 		<br<br>`);
 	let i = 0, j = 0, max = 0;
@@ -293,7 +293,34 @@ function task8() {
 	};
 	document.write (`</div>`);//обертка с уникальным классом
 };
+
 //Task 9
+function task9() {
+	let fibonacciNumber = [];
+	function fibonacci(a) {
+		let number1 = 0;
+		let number2 = 1;
+		let number3 = 0;
+		while (number3 <= a) {
+			fibonacciNumber.push(number3);
+			number3 = number1 + number2;
+			number1 = number2;
+			number2 = number3;
+		};
+		return fibonacciNumber;
+	};
+	fibonacci(10000);
+	document.write(`<table><tr><td>№ п/п</td>`);
+	for (i = 1; i <= fibonacciNumber.length; i++){
+		document.write(`<td>${i}</td>`);
+	};
+	document.write(`</tr><tr><td>число<br>Фибоначчи</td>`);
+	for (i = 0; i < fibonacciNumber.length; i++){
+		document.write(`<td>${fibonacciNumber[i]}</td>`);
+	};
+	document.write(`</tr></table>`);
+};
+
 //Task 10
 //Task 11
 //Task 12
