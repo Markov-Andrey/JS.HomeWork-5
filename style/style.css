@@ -181,7 +181,7 @@ input:checked + label:before {
 	background-position: left bottom;
 	background-repeat: no-repeat;
 	background-size: 150px 150px;
-	left: 91.5%;
+	right: 2px;
 	bottom: 2px;
 	width: 150px;
 	height: 150px;
