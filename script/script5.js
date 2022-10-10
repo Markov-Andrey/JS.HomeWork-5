@@ -454,3 +454,41 @@ function task12() {
 };
 
 //Task 13
+function task13() {
+	while(true){
+		let string = prompt('Введите электронную почту');
+		if (string.search(/[А-яЁё]/) !== -1) {
+			alert('Почта не может состоять из русских символов');
+		} else if (string.search(/[,!&?]/) !== -1) {
+			alert('Почта не может содержать спецсимволы');
+		} else if (string.split('@').length - 1 > 1) {
+			alert('Почта не может содержать более 1 "собачки"');
+		} else if (string.split('_').length - 1 > 1) {
+			alert('Почта не может содержать более 1 прочерка');
+		} else if (string.split('-').length - 1 > 1) {
+			alert('Почта не может содержать более 1 тире');
+		} else if (string.split('.').length - 1 > 1) {
+			alert('Почта не может содержать более 1 точки');
+		} else if ((string.indexOf('@') == 0) || (string.indexOf('@') == string.length - 1)) {
+			alert('Почта не может начинаться и заканчиваться с "собачки"');
+		} else if ((string.indexOf('_') == 0) || (string.indexOf('_') == string.length - 1)) {
+			alert('Почта не может начинаться и заканчиваться с прочерка');
+		} else if ((string.indexOf('-') == 0) || (string.indexOf('-') == string.length - 1)) {
+			alert('Почта не может начинаться и заканчиваться с тире');
+		} else if ((string.indexOf('.') == 0) || (string.indexOf('.') == string.length - 1)) {
+			alert('Почта не может начинаться и заканчиваться с точки');
+		} else if (string.indexOf('@') + 1 !== string.indexOf('_') || string.indexOf('@') - 1 !== string.indexOf('_')) {
+			alert('Почта не может иметь несколько спецсимволов подряд');
+		} else if (string.indexOf('_') + 1 !== string.indexOf('-') || string.indexOf('-') - 1 !== string.indexOf('_')) {
+			alert('Почта не может иметь несколько спецсимволов подряд');
+		} else if (string.indexOf('-') + 1 !== string.indexOf('.') || string.indexOf('.') - 1 !== string.indexOf('_')) {
+			alert('Почта не может иметь несколько спецсимволов подряд');
+		} else if (string.split('@')) {
+			alert(string.split('@'));
+			alert('Как-то узнать длину строки до знака @');
+		} else {
+			alert('Все верно!');
+			break;
+		};
+	};
+};
