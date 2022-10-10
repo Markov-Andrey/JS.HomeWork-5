@@ -122,7 +122,7 @@ function task4ArrayInput() {
 	что попадало в массив), решено использованием проверки if перед записью в массив, 
 	условием является - значение не равно пустому, т.е. ' '
 	</li></ul>`);
-	arrayInput = prompt('Задание №4. Введите массив чисел через пробел');
+	arrayInput = prompt('Задание №4. Введите массив чисел через пробел', '1A 2B 3 4C 5D 6 7 ABC 12 14     AD 1 2 3');
 	arr = arrayInput.split(' ');
 };
 //функция логической обработки и вывода массива
@@ -273,7 +273,7 @@ function task8() {
 
 	//проверка на число
 	while (true) {
-		max = +prompt('№8. Укажите высоту треугольника')
+		max = +prompt('№8. Укажите высоту треугольника', '12');
 		if (Number.isNaN(max)) {
 			alert ('Укажите число!');
 		} else {
@@ -395,4 +395,55 @@ function task11() {
 };
 
 //Task 12
+function task12() {
+		let surname = prompt('№12. Ваша фамилия?', 'Марков');
+		let name = prompt('№12. Ваше имя?', 'Андрей');
+		let middlename = prompt('№12. Ваше отчество?', 'Валерьевич');
+		let group =  prompt('№12. Какая учебная группа?', 'BE107');
+		let string0 = '';
+		let string1 = 'Домашняя работа: «Функции»';
+		let string2 = 'Выполнил: студент гр. ' + group;
+		let string3 = surname + ' ' + name + ' ' + middlename;
+		let fram;
+		let len;
+		let nbsp = '';
+		if ((string1.length >= string2.length) && (string1.length >= string3.length)) {
+			len = string1.length;
+			console.log('string1')
+		} else if ((string2.length >= string3.length) && (string2 >= string1)) {
+			len = string2.length;
+			console.log('string2')
+		} else {
+			len = string3.length;
+			console.log('string3')
+		};
+		len += 2; // добавил +2 для красоты
+		console.log(string1);
+		console.log(string2);
+		console.log(string3);
+		console.log(len);
+		for (let i = 0; i <= len; i++) {
+			string0 += '*';
+		};
+		console.log(string0); // строка0
+		string1 = '*' + string1; //* спереди
+		string1 += '*';			//* сзади
+		console.log(string1); // строка1
+		string2 = '*' + string2; //* спереди
+		string2 += '*';			//* сзади
+		console.log(string2); // строка2
+		string3 = '*' + string3; //* спереди
+		string3 += '*';			//* сзади
+		console.log(string3); // строка3
+		console.log(string0);// строка0
+		
+		document.write(`
+		${string0}<br>
+		${string1}<br>
+		${string2}<br>
+		${string3}<br>
+		${string0}<br>
+		`)
+};
+
 //Task 13
