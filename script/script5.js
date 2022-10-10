@@ -396,6 +396,11 @@ function task11() {
 
 //Task 12
 function task12() {
+	document.write(`Выполнено не самым лучшим образом.<br>
+		Хотелось сделать равномерные отступы с обеих сторон рамки.<br>
+		Однако работа с пробелами - дело неблагодарное.<br>
+		Требуется оптимизация.
+		<br><br>`);
 		let surname = prompt('№12. Ваша фамилия?', 'Марков');
 		let name = prompt('№12. Ваше имя?', 'Андрей');
 		let middlename = prompt('№12. Ваше отчество?', 'Валерьевич');
@@ -406,26 +411,34 @@ function task12() {
 		let string3 = surname + ' ' + name + ' ' + middlename;
 		let fram;
 		let len;
-		let nbsp = '';
-		if ((string1.length >= string2.length) && (string1.length >= string3.length)) {
+		let nbsp = ' ';
+		if (string1.length >= string2.length) {
 			len = string1.length;
-			console.log('string1')
-		} else if ((string2.length >= string3.length) && (string2 >= string1)) {
+		}
+		if (string2.length >= string3.length) {
 			len = string2.length;
-			console.log('string2')
-		} else {
+		}
+		if (string3.length >= string1.length) {
 			len = string3.length;
-			console.log('string3')
-		};
-		len += 2; // добавил +2 для красоты
-		console.log(string1);
-		console.log(string2);
-		console.log(string3);
-		console.log(len);
+		}
+		len += 10; // добавил +10 для теста
 		for (let i = 0; i <= len; i++) {
 			string0 += '*';
 		};
 		console.log(string0); // строка0
+		for (i = 0; i < len - string1.length; i++) {
+			string1 += nbsp;
+			string1 = nbsp + string1;
+		};
+		for (i = 0; i < len - string2.length; i++) {
+			string2 += nbsp;
+			string2 = nbsp + string2;
+		};
+		for (i = 0; i < len - string3.length; i++) {
+			string3 += nbsp;
+			string3 = nbsp + string3;
+		};
+		//string1 += ' ';			//* сзади пробел
 		string1 = '*' + string1; //* спереди
 		string1 += '*';			//* сзади
 		console.log(string1); // строка1
@@ -437,13 +450,7 @@ function task12() {
 		console.log(string3); // строка3
 		console.log(string0);// строка0
 		
-		document.write(`
-		${string0}<br>
-		${string1}<br>
-		${string2}<br>
-		${string3}<br>
-		${string0}<br>
-		`)
+		document.write(`Задание выполнено в console.log`)
 };
 
 //Task 13
