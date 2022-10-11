@@ -489,16 +489,6 @@ function task13() {
 			} else {return false};
 		};
 		//
-		function indexOf(a) {
-			if (
-                mail.indexOf(a) + 1 == mail.indexOf('.') || mail.indexOf(a) - 1 == mail.indexOf('.') ||
-                mail.indexOf(a) + 1 == mail.indexOf('_') || mail.indexOf(a) - 1 == mail.indexOf('_') ||
-                mail.indexOf(a) + 1 == mail.indexOf('-') || mail.indexOf(a) - 1 == mail.indexOf('-')) {
-                alert('Почта не должна содержать несколько спец. символов "' + a + '" подряд. Введите почту заново');
-				return true;
-			} else {return false};
-		};
-		//
         let mail = prompt('Введите почту', 'andremarkov@icloud.com');
         switch (true) {
             case (mail.search(/[А-яЁё]/) !== -1):
