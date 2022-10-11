@@ -509,34 +509,22 @@ function task13() {
                 continue;
 				
 			//используем ф-ию mailSplit с нужным аргументом
-            case (mailSplit('@')):
-                continue;
-            case (mailSplit('.')):
-                continue;
-            case (mailSplit('_')):
-                continue;
-            case (mailSplit('-')):
-                continue;
+            case (mailSplit('@')): continue;
+            case (mailSplit('.')): continue;
+            case (mailSplit('_')): continue;
+            case (mailSplit('-')): continue;
 				
 			//используем ф-ию mailIndexOf с нужным аргументом
-            case (mailIndexOf('@')):
-                continue;
-            case (mailIndexOf('.')):
-                continue;
-            case (mailIndexOf('_')):
-                continue;
-            case (mailIndexOf('-')):
-                continue;
+            case (mailIndexOf('@')): continue;
+            case (mailIndexOf('.')): continue;
+            case (mailIndexOf('_')): continue;
+            case (mailIndexOf('-')): continue;
 				
 			//используем ф-ию indexOf с нужным аргументом
-            case (indexOf('@')) :
-                continue;
-            case (indexOf('.')) :
-                continue;
-            case (indexOf('_')) :
-                continue;
-            case (indexOf('-')) :
-                continue;
+            case (indexOf('@')) : continue;
+            case (indexOf('.')) : continue;
+            case (indexOf('_')) : continue;
+            case (indexOf('-')) : continue;
 
             case (mail.split('@')[1].length <= 3):
                 alert('После знака "@" должно быть более 2-х символов. Введите почту заново');
