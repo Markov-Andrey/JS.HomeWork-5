@@ -455,40 +455,103 @@ function task12() {
 
 //Task 13
 function task13() {
-	while(true){
-		let string = prompt('Введите электронную почту');
-		if (string.search(/[А-яЁё]/) !== -1) {
-			alert('Почта не может состоять из русских символов');
-		} else if (string.search(/[,!&?]/) !== -1) {
-			alert('Почта не может содержать спецсимволы');
-		} else if (string.split('@').length - 1 > 1) {
-			alert('Почта не может содержать более 1 "собачки"');
-		} else if (string.split('_').length - 1 > 1) {
-			alert('Почта не может содержать более 1 прочерка');
-		} else if (string.split('-').length - 1 > 1) {
-			alert('Почта не может содержать более 1 тире');
-		} else if (string.split('.').length - 1 > 1) {
-			alert('Почта не может содержать более 1 точки');
-		} else if ((string.indexOf('@') == 0) || (string.indexOf('@') == string.length - 1)) {
-			alert('Почта не может начинаться и заканчиваться с "собачки"');
-		} else if ((string.indexOf('_') == 0) || (string.indexOf('_') == string.length - 1)) {
-			alert('Почта не может начинаться и заканчиваться с прочерка');
-		} else if ((string.indexOf('-') == 0) || (string.indexOf('-') == string.length - 1)) {
-			alert('Почта не может начинаться и заканчиваться с тире');
-		} else if ((string.indexOf('.') == 0) || (string.indexOf('.') == string.length - 1)) {
-			alert('Почта не может начинаться и заканчиваться с точки');
-		} else if (string.indexOf('@') + 1 !== string.indexOf('_') || string.indexOf('@') - 1 !== string.indexOf('_')) {
-			alert('Почта не может иметь несколько спецсимволов подряд');
-		} else if (string.indexOf('_') + 1 !== string.indexOf('-') || string.indexOf('-') - 1 !== string.indexOf('_')) {
-			alert('Почта не может иметь несколько спецсимволов подряд');
-		} else if (string.indexOf('-') + 1 !== string.indexOf('.') || string.indexOf('.') - 1 !== string.indexOf('_')) {
-			alert('Почта не может иметь несколько спецсимволов подряд');
-		} else if (string.split('@')) {
-			alert(string.split('@'));
-			alert('Как-то узнать длину строки до знака @');
-		} else {
-			alert('Все верно!');
-			break;
+	document.write(`Решение этого задания было позаимствовано у Чайко Виталия и<br>
+		доработано с помощью вызова вспомогательных функций с установленным аргументом.<br>
+		Повторяющиеся конструкции в коде вынесены в отдельные функции.<br>
+		Таким образом упрощается работа с кодом (потенциальный ввод новых параметров).<br>
+		А также визуально красивее выглядит для других разработчиков.
+		<br><br>`);
+    while (true) {
+		//функция проверки на более 1 спецсимвола
+		function mailSplit(a) {
+			if (mail.split(a).length - 1 > 1) {
+				alert('Почта не должна содержать более одного спецсимвола "' + a + '". Введите почту заново');
+				return true;
+			} else {return false};
 		};
-	};
+		//
+		//функция проверки на спецсимвол вначале и в конце строки
+		function mailIndexOf(a) {
+			if (mail.indexOf(a) == 0 || mail.indexOf(a) == mail.length - 1) {
+				alert('Почта не должна начинаться или заканчиваться знаком "' + a + '". Введите почту заново');
+				return true;
+			} else {return false};
+		};
+		//
+		//функция проверки на спецсимволы рядом друг с другом
+		function indexOf(a) {
+			if (
+                mail.indexOf(a) + 1 == mail.indexOf('.') || mail.indexOf(a) - 1 == mail.indexOf('.') ||
+                mail.indexOf(a) + 1 == mail.indexOf('_') || mail.indexOf(a) - 1 == mail.indexOf('_') ||
+                mail.indexOf(a) + 1 == mail.indexOf('-') || mail.indexOf(a) - 1 == mail.indexOf('-')) {
+                alert('Почта не должна содержать несколько спец. символов "' + a + '" подряд. Введите почту заново');
+				return true;
+			} else {return false};
+		};
+		//
+		function indexOf(a) {
+			if (
+                mail.indexOf(a) + 1 == mail.indexOf('.') || mail.indexOf(a) - 1 == mail.indexOf('.') ||
+                mail.indexOf(a) + 1 == mail.indexOf('_') || mail.indexOf(a) - 1 == mail.indexOf('_') ||
+                mail.indexOf(a) + 1 == mail.indexOf('-') || mail.indexOf(a) - 1 == mail.indexOf('-')) {
+                alert('Почта не должна содержать несколько спец. символов "' + a + '" подряд. Введите почту заново');
+				return true;
+			} else {return false};
+		};
+		//
+        let mail = prompt('Введите почту', 'andremarkov@icloud.com');
+        switch (true) {
+            case (mail.search(/[А-яЁё]/) !== -1):
+                alert('Почта должна состоять из латичнских букв. Введите почту заново');
+                continue;
+            case (mail.search(/[,!&?]/) !== -1):
+                alert('Почта не должна содержать спец. символы. Введите почту заново');
+                continue;
+				
+			//используем ф-ию mailSplit с нужным аргументом
+            case (mailSplit('@')):
+                continue;
+            case (mailSplit('.')):
+                continue;
+            case (mailSplit('_')):
+                continue;
+            case (mailSplit('-')):
+                continue;
+				
+			//используем ф-ию mailIndexOf с нужным аргументом
+            case (mailIndexOf('@')):
+                continue;
+            case (mailIndexOf('.')):
+                continue;
+            case (mailIndexOf('_')):
+                continue;
+            case (mailIndexOf('-')):
+                continue;
+				
+			//используем ф-ию indexOf с нужным аргументом
+            case (indexOf('@')) :
+                continue;
+            case (indexOf('.')) :
+                continue;
+            case (indexOf('_')) :
+                continue;
+            case (indexOf('-')) :
+                continue;
+
+            case (mail.split('@')[1].length <= 3):
+                alert('После знака "@" должно быть более 2-х символов. Введите почту заново');
+                continue;
+            case (mail.split('@')[1].length > 11):
+                alert('После знака "@" должно быть менее 11 символов. Введите почту заново');
+                continue;
+            case (mail.split('@')[0].length < 2):
+                alert('Перед знаком "@" должно быть более 2-х символов. Введите почту заново');
+                continue;
+
+            case true:
+				document.write(`<ul><li>EMAIL: ${mail}</li></ul>`);
+                break;
+        };
+        break;
+    };
 };
